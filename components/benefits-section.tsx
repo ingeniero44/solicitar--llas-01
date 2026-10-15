@@ -25,7 +25,7 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section id="beneficios" className="py-16 md:py-24">
+    <section id="beneficios" className="bg-gradient-to-b from-blue-50 via-sky-50/70 to-blue-50/40 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl text-balance">
