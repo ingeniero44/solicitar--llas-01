@@ -7,26 +7,28 @@ import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-secondary/70 via-background to-background py-10 md:py-12 lg:py-8 lg:pb-14">
-      <div className="container mx-auto px-4">
+    <section className="relative isolate overflow-hidden bg-[radial-gradient(ellipse_at_10%_5%,rgba(125,211,252,0.42),transparent_36%),radial-gradient(ellipse_at_95%_80%,rgba(96,165,250,0.3),transparent_38%),linear-gradient(135deg,#eff8ff_0%,#dceeff_48%,#f7fbff_100%)] py-10 md:py-12 lg:py-8 lg:pb-14">
+      <div className="pointer-events-none absolute -left-20 top-20 size-72 rounded-full bg-sky-300/25 blur-3xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute -right-20 -top-20 size-80 rounded-full bg-blue-400/20 blur-3xl" aria-hidden="true" />
+      <div className="relative container mx-auto px-4">
         <div className="grid items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-12">
           <div className="max-w-2xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-card/90 px-4 py-2 text-sm shadow-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-white/85 px-4 py-2 text-sm shadow-sm backdrop-blur-sm">
               <span className="size-2 rounded-full bg-primary" />
               <span className="font-medium text-primary">Vacantes disponibles</span>
             </div>
 
-            <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-5xl text-balance">
-              Bienvenido a <span className="text-primary">BodegasCOL</span>
+            <h1 className="mb-4 text-4xl font-bold tracking-tight text-slate-950 md:text-5xl lg:text-5xl text-balance">
+              Bienvenido a <span className="text-blue-800">BodegasCOL</span>
             </h1>
 
-            <p className="mb-7 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl text-balance">
+            <p className="mb-7 max-w-xl text-lg leading-relaxed text-slate-700 md:text-xl text-balance">
               Genera ingresos desde la comodidad de tu hogar empacando y organizando productos como{" "}
-              <strong className="font-semibold text-foreground">cosméticos, juguetes, accesorios de cocina</strong>{" "}
+              <strong className="font-semibold text-slate-950">cosméticos, juguetes, accesorios de cocina</strong>{" "}
               y más. Nosotros nos encargamos de llevarte los productos y recogerlos una vez listos.
             </p>
 
-            <div className="mb-7 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl border border-border/80 bg-card/80 px-5 py-4 shadow-sm sm:inline-flex">
+            <div className="mb-7 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl border border-white/80 bg-white/90 px-5 py-4 shadow-lg shadow-blue-900/5 backdrop-blur-sm sm:inline-flex">
               <div>
                 <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                   Salario semanal
@@ -34,17 +36,17 @@ export function HeroSection() {
                 <p className="text-3xl font-bold tracking-tight text-accent md:text-4xl">500 mil pesos</p>
               </div>
               <span className="hidden h-12 w-px bg-border sm:block" aria-hidden="true" />
-              <p className="text-sm text-muted-foreground">Pagos puntuales cada semana</p>
+              <p className="text-sm text-slate-600">Pagos puntuales cada semana</p>
             </div>
 
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
-              <Button asChild size="lg" className="bg-accent px-7 text-accent-foreground shadow-md shadow-accent/15 transition-transform hover:-translate-y-0.5 hover:bg-accent/90">
+              <Button asChild size="lg" className="bg-blue-800 px-7 text-white shadow-md shadow-blue-900/20 transition-transform hover:-translate-y-0.5 hover:bg-blue-900">
                 <Link href="#postularme">
                   Postularme
                   <ArrowRight className="ml-2 size-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <p className="text-sm text-muted-foreground">Si quieres postularte presiona aquí</p>
+              <p className="text-sm text-slate-600">Si quieres postularte presiona aquí</p>
             </div>
           </div>
 
