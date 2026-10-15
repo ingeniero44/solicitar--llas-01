@@ -1,81 +1,100 @@
 "use client"
 
-import { ArrowDown, Home, Truck, Banknote } from "lucide-react"
+import Image from "next/image"
+import { ArrowRight, Home, Truck, Banknote, PackageCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden py-12 md:py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-secondary/70 via-background to-background py-10 md:py-12 lg:py-8 lg:pb-14">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-3xl text-center">
-          {/* Badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-4 py-2 text-sm">
-            <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-muted-foreground">Vacantes disponibles</span>
-          </div>
+        <div className="grid items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-12">
+          <div className="max-w-2xl">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-card/90 px-4 py-2 text-sm shadow-sm">
+              <span className="size-2 rounded-full bg-primary" />
+              <span className="font-medium text-primary">Vacantes disponibles</span>
+            </div>
 
-          {/* Título */}
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl text-balance">
-            Bienvenido a{" "}
-            <span className="text-primary">BodegasCOL</span>
-          </h1>
+            <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-5xl text-balance">
+              Bienvenido a <span className="text-primary">BodegasCOL</span>
+            </h1>
 
-          {/* Descripción */}
-          <p className="mb-8 text-lg text-muted-foreground md:text-xl text-balance">
-            Genera ingresos desde la comodidad de tu hogar empacando y organizando productos como{" "}
-            <strong className="text-foreground">cosméticos, juguetes, accesorios de cocina</strong>{" "}
-            y más. Nosotros nos encargamos de llevarte los productos y recogerlos una vez listos.
-          </p>
-
-          {/* Tarjeta de salario */}
-          <div className="mx-auto mb-8 max-w-sm rounded-2xl border border-border bg-card p-6 shadow-sm">
-            <p className="mb-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              Salario Semanal
+            <p className="mb-7 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl text-balance">
+              Genera ingresos desde la comodidad de tu hogar empacando y organizando productos como{" "}
+              <strong className="font-semibold text-foreground">cosméticos, juguetes, accesorios de cocina</strong>{" "}
+              y más. Nosotros nos encargamos de llevarte los productos y recogerlos una vez listos.
             </p>
-            <p className="text-4xl font-bold text-accent md:text-5xl">500 mil pesos</p>
-            <p className="mt-2 text-sm text-muted-foreground">Pagos puntuales cada semana</p>
-          </div>
 
-          {/* CTA */}
-          <div className="mb-8">
-            <p className="mb-2 text-sm text-muted-foreground">Si quieres postularte presiona aquí</p>
-            <ArrowDown className="mx-auto mb-4 h-5 w-5 animate-bounce text-accent" />
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8">
-              <Link href="#postularme">Postularme</Link>
-            </Button>
-          </div>
-
-          {/* Features */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
-                <Home className="h-5 w-5 text-muted-foreground" />
+            <div className="mb-7 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl border border-border/80 bg-card/80 px-5 py-4 shadow-sm sm:inline-flex">
+              <div>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                  Salario semanal
+                </p>
+                <p className="text-3xl font-bold tracking-tight text-accent md:text-4xl">500 mil pesos</p>
               </div>
-              <div className="text-left">
-                <p className="font-medium text-foreground">Desde tu casa</p>
-                <p className="text-sm text-muted-foreground">Sin traslados</p>
-              </div>
+              <span className="hidden h-12 w-px bg-border sm:block" aria-hidden="true" />
+              <p className="text-sm text-muted-foreground">Pagos puntuales cada semana</p>
             </div>
 
-            <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
-                <Truck className="h-5 w-5 text-muted-foreground" />
-              </div>
-              <div className="text-left">
-                <p className="font-medium text-foreground">Entrega a domicilio</p>
-                <p className="text-sm text-muted-foreground">Nosotros llevamos y recogemos</p>
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
+              <Button asChild size="lg" className="bg-accent px-7 text-accent-foreground shadow-md shadow-accent/15 transition-transform hover:-translate-y-0.5 hover:bg-accent/90">
+                <Link href="#postularme">
+                  Postularme
+                  <ArrowRight className="ml-2 size-4" aria-hidden="true" />
+                </Link>
+              </Button>
+              <p className="text-sm text-muted-foreground">Si quieres postularte presiona aquí</p>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+            <div className="absolute -inset-3 rounded-[2rem] bg-primary/10 blur-2xl" aria-hidden="true" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-white/70 bg-secondary shadow-2xl shadow-primary/10 sm:aspect-[5/4] lg:aspect-[4/3]">
+              <Image
+                src="/packing-woman.png"
+                alt="Mujer de cabello rizado empacando productos en su espacio de trabajo en casa"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 48vw"
+                className="object-cover object-center"
+              />
+              <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/90 px-3 py-2 text-xs font-semibold text-primary shadow-md backdrop-blur-sm sm:left-6 sm:top-6 sm:text-sm">
+                <PackageCheck className="size-4" aria-hidden="true" />
+                Empaca desde casa
               </div>
             </div>
+          </div>
+        </div>
 
-            <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
-                <Banknote className="h-5 w-5 text-muted-foreground" />
-              </div>
-              <div className="text-left">
-                <p className="font-medium text-foreground">Pago semanal</p>
-                <p className="text-sm text-muted-foreground">500 mil pesos garantizados</p>
-              </div>
+        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:mt-14">
+          <div className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card/80 p-4 shadow-sm backdrop-blur-sm transition-transform hover:-translate-y-1 sm:p-5">
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+              <Home className="size-5" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Desde tu casa</p>
+              <p className="text-sm text-muted-foreground">Sin traslados</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card/80 p-4 shadow-sm backdrop-blur-sm transition-transform hover:-translate-y-1 sm:p-5">
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+              <Truck className="size-5" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Entrega a domicilio</p>
+              <p className="text-sm text-muted-foreground">Nosotros llevamos y recogemos</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card/80 p-4 shadow-sm backdrop-blur-sm transition-transform hover:-translate-y-1 sm:p-5">
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+              <Banknote className="size-5" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Pago semanal</p>
+              <p className="text-sm text-muted-foreground">500 mil pesos garantizados</p>
             </div>
           </div>
         </div>
